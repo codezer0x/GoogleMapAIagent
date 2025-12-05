@@ -1,0 +1,263 @@
+{
+  "name": "💥 xCodeWraith - Google Maps Lead Alt-Workflow",
+  "nodes": [
+    {
+      "parameters": {
+        "inputSource": "passthrough"
+      },
+      "id": "c055762a-8fe7-4141-a639-df2372f30060",
+      "typeVersion": 1.1,
+      "name": "When Executed by Another Workflow",
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "position": [
+        272,
+        352
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const v7 = () => {\n  return 'tttttttt-tttt-7xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c){\n    const r = Math.trunc(Math.random() * 16);\n    const v = c == 'x' ? r : (r & 0x3 | 0x8);\n    return v.toString(16);\n  }).replace(/[t]{8}-[t]{4}/, function (){\n    const unixtimestamp = Date.now().toString(16).padStart(12, '0');\n    return unixtimestamp.slice(0, 8) + '-' + unixtimestamp.slice(8);\n  })\n}\n\nconst data = JSON.parse($input.all()[0].json.query);\nconst datawithId = data.map(i => {\n  const uuid = v7();\n  return { UUID: uuid, ... i}\n});\n\nreturn datawithId;"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        480,
+        352
+      ],
+      "id": "9ce9178c-ad02-43c7-ac1f-d81f393590bb",
+      "name": "Code"
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1R4PGBIBihrNCfj0olbDT2p3jbtWCwYVlCgKU6Z3rf48",
+          "mode": "list",
+          "cachedResultName": "Leads Google map ai agent",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1R4PGBIBihrNCfj0olbDT2p3jbtWCwYVlCgKU6Z3rf48/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Sheet1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1R4PGBIBihrNCfj0olbDT2p3jbtWCwYVlCgKU6Z3rf48/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "autoMapInputData",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "UUID",
+              "displayName": "UUID",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Name",
+              "displayName": "Name",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Address",
+              "displayName": "Address",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Number",
+              "displayName": "Number",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Website",
+              "displayName": "Website",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Rating",
+              "displayName": "Rating",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Opening Hours",
+              "displayName": "Opening Hours",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Email",
+              "displayName": "Email",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Background",
+              "displayName": "Background",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        688,
+        352
+      ],
+      "id": "60c73b59-e00f-48e4-ba60-5221ee09cdb5",
+      "name": "Append row in sheet",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "9RzoHloafemtdDCP",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "\n\nreturn {json : {response : \"ok\"} } "
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        896,
+        352
+      ],
+      "id": "c43992f0-6601-4d95-9a6a-17767809246e",
+      "name": "Code1"
+    },
+    {
+      "parameters": {
+        "content": "## 💥 xCodeWraith - Google Maps Lead Alt-Workflow\n\n**Versiyon:** 2.0\n**Geliştirici:** xCodeWraith\n\n---\n\n### 📋 Bu Ne Yapar?\nAna workflow'dan gelen lead verilerini:\n\n1️⃣ UUID ile benzersiz tanımlayıcı ekler\n2️⃣ Google Sheets'e otomatik kaydeder\n3️⃣ İşlem sonucunu ana workflow'a döner\n\n---\n\n⚠️ **Dikkat:** Bu workflow tek başına çalışmaz!\nAna workflow tarafından çağrılır.",
+        "height": 380,
+        "width": 320,
+        "color": 4
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        40,
+        200
+      ],
+      "typeVersion": 1,
+      "id": "sticky-alt-main",
+      "name": "📋 Workflow Açıklaması"
+    },
+    {
+      "parameters": {
+        "content": "## 🔢 UUID Oluşturma\n\nHer lead için benzersiz UUID v7 oluşturur.\n\nFormat: `679a1234-5678-7abc-...`\n\nBu ID, zenginleştirme sırasında eşleştirme için kullanılır.",
+        "height": 180,
+        "width": 280,
+        "color": 6
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        400,
+        200
+      ],
+      "typeVersion": 1,
+      "id": "sticky-uuid-note",
+      "name": "🔢 UUID"
+    },
+    {
+      "parameters": {
+        "content": "## 📊 Google Sheets Kayıt\n\n**Hedef:** `Leads Google map ai agent` sayfası\n\nKayıt edilen alanlar:\n• UUID, Name, Address\n• Number, Website, Rating\n• Opening Hours, Email, Background",
+        "height": 200,
+        "width": 280,
+        "color": 5
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        620,
+        200
+      ],
+      "typeVersion": 1,
+      "id": "sticky-sheets-note",
+      "name": "📊 Sheets"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When Executed by Another Workflow": {
+      "main": [
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code": {
+      "main": [
+        [
+          {
+            "node": "Append row in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Append row in sheet": {
+      "main": [
+        [
+          {
+            "node": "Code1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "c6e6a593-3c63-40de-a2e8-70a5d963543b",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "3e79d8d71e8a3a061e4f6532230f99a3021afdbf498967d54b5a272e6abc3ed0"
+  },
+  "id": "q9kFg1JBCkLSLiXc",
+  "tags": []
+}
